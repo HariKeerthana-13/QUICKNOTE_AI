@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickNote AI</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QuickNote AI</h1>
+            <p>Paste your raw text (like meeting notes) to instantly get a concise summary and a list of key action items.</p>
+        </header>
+        
+        <main>
+            <textarea id="inputText" placeholder="Paste your meeting notes or rough draft here..."></textarea>
+            <button id="processButton">Process Text</button>
+            
+            <div id="loader" class="hidden">
+                <div class="spinner"></div>
+                Processing... please wait. This may take a moment.
+            </div>
+
+            <div class="results">
+                <div class="result-box">
+                    <div class="result-header">
+                        <h2>Summary</h2>
+                        <button id="listenButton" title="Read summary aloud" disabled>🔊 <span>Listen</span></button>
+                    </div>
+                    
+                    <div id="tts-settings" class="hidden">
+                        <div class="setting-control" id="voice-search-container">
+                            <label for="voice-search">Search Voice:</label>
+                            <input type="text" id="voice-search" placeholder="e.g., Rishi, Veena...">
+                        </div>
+                        <div class="setting-control">
+                            <label for="voice-select">Voice:</label>
+                            <select id="voice-select"></select>
+                        </div>
+                        <div class="setting-control">
+                            <label for="rate-slider">Speed:</label>
+                            <input type="range" id="rate-slider" min="100" max="250" value="175">
+                            <span id="rate-value">Normal</span>
+                        </div>
+                    </div>
+    
+                    <div id="summaryOutput" class="output-area"></div>
+                </div>
+                <div class="result-box">
+                    <div class="result-header">
+                        <h2>Action Items</h2>
+                    </div>
+                    <ul id="actionItemsOutput" class="output-area"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>Powered by a Local Language Model</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

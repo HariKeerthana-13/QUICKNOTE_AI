@@ -1,0 +1,5 @@
+Flask
+transformers
+torch
+pyttsx3
+pyobjc # For macOS text-to-speech support
