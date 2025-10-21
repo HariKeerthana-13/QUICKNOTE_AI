@@ -1,0 +1,1 @@
+# QUICKNOTE_AI
